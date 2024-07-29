@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+       <title>accueil</title>
+	   
+
+
+  
+   </head>
+   <body>
+
+  <div id='ddeu' style="top:'80px'; left:'100px';position:'absolute';"></div>
+<div style="margin-top:'50px';margin-right:'150px';float:'right';position:'absolute';" width='250' height='150'><img id="header" style="margin-top:'500px';margin-right:'150px';float:'right';position:'absolute';" src='headerUsers' width='250' height='150'/></div>
+ <div id='dd' style="margin-top:'150px';position:'absolute';" width='550' height='850'><img id="menu1" style="margin-left:'250px'; margin-top:'150px';" src="menuUsers" width='250' height='150'/></div>
+
+
+<script type="text/javascript">
+function fuse(abc) {
+abc.width = '400';
+abc.height = '100';
+}
+var hauteurfenetre=window.screen.availHeight;
+var largeurfenetre=window.screen.availWidth;
+var hauteurecran=window.screen.height;
+var largeurecran=window.screen.width;
+var couleurs=window.screen.colorDepth;
+var arrbo = ["accueil", "présentation", "nawak", "x)", "bref", "est-ce des boutons", "youpi", "!"];
+var interv;
+var results = document.getElementById('header');
+var boool = false;
+results.addEventListener('mouseover', function() {
+if (boool == false) {
+
+    document.getElementById('dd').width = (Math.round(largeurfenetre/2)-250);
+document.getElementById('menu1').style.position = "absolute";
+document.getElementById('menu1').marginTop = 50;
+document.getElementById('menu1').width = (Math.round(largeurfenetre/2)-250);
+interv = setInterval(funt, 250);
+}
+});
+
+document.getElementById('menu1').addEventListener('click', function() {
+if (boool == false) {
+clearInterval(interv);
+
+    document.getElementById('dd').width = 550;
+document.getElementById('menu1').style.position = "absolute";
+document.getElementById('menu1').marginTop = 0;
+document.getElementById('menu1').marginLeft = Math.round(largeurfenetre/2-250);
+document.getElementById('menu1').width = 550;
+interv = setInterval(funt, 500);
+}
+boool = true;
+});
+var ttoopp = 0;
+function funt() {
+
+if (document.getElementById('header').height > 150 && document.getElementById('menu1').marginTop == 0) {
+var bb = 'boutons'; bb += Number(ttoopp/125).toString();
+document.getElementById(bb).innerHTML = '';
+document.getElementById(bb).remove();
+ttoopp -= 125;
+
+document.getElementById('header').height -= 125;
+
+
+} else if (document.getElementById('header').height < (hauteurfenetre-375) && document.getElementById('menu1').marginTop == 50) {
+document.getElementById('header').height += 125;
+ttoopp += 125;
+var bb = 'boutons'; bb += Number(ttoopp/125).toString();
+var innHTm = '';
+innHTm += `<div id="`;
+innHTm += bb; 
+innHTm += `" left='150px' top='`; 
+innHTm += Number(ttoopp-15).toString();
+innHTm += `px' position='absolute' style="position:'absolute';">`;
+innHTm += `<img src="menuUsers" left='150px' width='185' height='100' top='`; innHTm += Number(ttoopp-15).toString(); innHTm += `px' position='absolute' style="position:'absolute';" onclick='fuse(this)'/>`;
+innHTm += arrbo[ttoopp/125]; innHTm += `</div>`;
+document.getElementById('ddeu').innerHTML += innHTm;
+document.getElementById(bb).style.position = "absolute";
+var mm = Number(ttoopp-15).toString();
+mm += "px";
+document.getElementById(bb).style.marginTop = mm;
+
+} else {
+if (boool) {
+document.getElementById('ddeu').innerHTML = '';
+}
+boool = false;
+clearInterval(interv);
+
+}
+}  
+</script> 
+
+
+
+   </body>
+</html>

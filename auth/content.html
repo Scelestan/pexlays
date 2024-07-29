@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+<title>Create game with babylonJS</title>
+
+<style>
+        html, body {
+            width   : 100%;
+            height  : 100%;
+            margin  : 0;
+            padding : 0;
+        }
+
+        #renderCanvas {
+            width   : 100%;
+            height  : 100%;
+            touch-action: none;
+        }
+</style>
+
+<script src='/babylon'></script>
+<script src="/babylonjs.loaders.min"></script>
+<script src="/babylonjs.serializers"></script>
+<script src='/importModules' type="module"></script>
+
+</head>
+<body>
+
+    <canvas id="renderCanvas" style='z-index:1;'></canvas>
+<div style='z-index:2; position:absolute; top:80%; left:50px;'>
+<h1 id='h1'>%*%</h1>
+<input type='text' id='xv' row='15'/>
+<input type='button' value='Chat send' id='selection'/>
+</div>
+<div id='pourcentaa' style='top:0px; left:70%; width   : 350px; height  : 500px; position:absolute'>
+<div id='pourcent' style='background-color:white; font-size: 15px;'></div>
+</div>
+</body>
+</html>

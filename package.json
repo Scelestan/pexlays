@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "androidjs-builder": "^2.3.2",
+    "express": "^4.18.2",
+    "express-ws": "^5.0.2",
+    "olap-cube-js": "^0.16.1",
+    "ws": "^8.13.0"
+  }
+}
