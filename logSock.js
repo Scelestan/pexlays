@@ -749,7 +749,7 @@ socket.on('connection', function(ws, wss) {
   var domain = wss.headers.origin;
   //console.log(domain);
   
-  if (domain == "https://4321-cs-ffa3f9c4-71ad-498d-bb23-ef3e70b65703.cs-europe-west1-haha.cloudshell.dev" || domain == "https://4321-cs-ffa3f9c4-71ad-498d-bb23-ef3e70b65703.cs-europe-west1-haha.cloudshell.dev/map") {
+  if (domain == "https://pexlays-3kwyzc3uya-od.a.run.app" || domain == "https://pexlays-3kwyzc3uya-od.a.run.app/map") {
 var tototo = 0;
 var IDENT = identi;
 identi += 1;
