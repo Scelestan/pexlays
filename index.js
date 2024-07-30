@@ -120,7 +120,7 @@ rejectUnauthorized: false },
 
 sock.Init__Socklog(apps, server, Routerer, "");
 
-server.listen(4321, "0.0.0.0");
+server.listen(4321, "127.0.0.1");
 	
 
           
